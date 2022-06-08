@@ -1,6 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap");
+
+.light * {
+    --accent: #da1bda;
+    --accent-dark: #c712c7;
+    --border: rgb(215, 218, 221);
+    --text: rgb(56, 56, 56);
+    --text-light: white;
+    --background: white;
+}
+
+.dark * {
+    --accent: #da1bda;
+    --accent-dark: #c712c7;
+    --accent-focus: #da1bda65;
+    --border: #4e4e5c;
+    --text: rgb(225, 225, 225);
+    --background: #212131;
+}
+
 * {
     margin: 0;
     padding: 0;
+    border: none;
+    outline: none;
     box-sizing: border-box;
-    color: blue;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+.g-page-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.g-row-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.g-column-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.g-row {
+    display: flex;
+    align-items: center;
+}
+
+.g-center-content {
+    max-width: 1000px;
+    margin: 50px 0;
 }

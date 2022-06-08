@@ -1,15 +1,15 @@
-import Head from "next/head"
+import Layout from "../components/Layout"
 
 const Home = () => {
     return (
-        <>
-            <Head>
-                <title>Rohan Phanse</title>
-                <link rel = "icon" type = "image/png" href = "/images/logo.png" />
-            </Head>
-            <h1>Hi I&apos;m Rohan.</h1>
-            <p>I&apos;m passionate about CS and I&apos;m currently learning Rust and smart contracts.</p>
-        </>
+        <Layout>
+            <div className = "g-row-center">
+                <div className = "g-center-content">
+                    <h1>Hi I&apos;m Rohan.</h1>
+                    <p>I&apos;m passionate about CS and I&apos;m currently learning Rust and smart contracts.</p>
+                </div>
+            </div>
+        </Layout>
     )
 }
 
