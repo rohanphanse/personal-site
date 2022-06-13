@@ -1,6 +1,6 @@
 import Head from "next/head"
 
-const MetaData = () => {
+const Metadata = () => {
     return (
         <Head>
             <title>Rohan Phanse</title>
@@ -9,4 +9,4 @@ const MetaData = () => {
     )
 }
 
-export default MetaData
+export default Metadata
