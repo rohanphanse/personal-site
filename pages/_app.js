@@ -1,10 +1,10 @@
-import MetaData from "../components/MetaData"
+import Metadata from "../components/Metadata"
 import "../styles/global.css"
 
 const App = ({ Component, pageProps }) => {
     return (
         <>
-            <MetaData />
+            <Metadata />
             <Component {...pageProps} />
         </>
     )

@@ -1,4 +1,4 @@
-import NavBar from "./NavBar"
+import Navbar from "./Navbar"
 import { useState, useEffect } from "react"
 
 const Layout = (props) => {
@@ -20,7 +20,7 @@ const Layout = (props) => {
     return (
         <>
             <div className = {theme}>
-                <NavBar theme = {theme} toggleTheme = {() => toggleTheme()} />
+                <Navbar theme = {theme} toggleTheme = {() => toggleTheme()} />
                 <div className = "container">
                     {props.children}
                 </div>
