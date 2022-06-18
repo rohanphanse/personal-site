@@ -1,9 +1,9 @@
 import Head from "next/head"
 
-const Metadata = () => {
+const Metadata = (props) => {
     return (
         <Head>
-            <title>Rohan Phanse</title>
+            <title>{ props.page ? `${props.page} - Rohan Phanse` : "Rohan Phanse" }</title>
             <link rel = "icon" type = "image/png" href = "/images/logo.png" />
         </Head>
     )

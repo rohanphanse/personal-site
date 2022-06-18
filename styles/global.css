@@ -7,15 +7,17 @@
     --text: rgb(56, 56, 56);
     --text-light: white;
     --background: white;
+    --link: #0070f3;
 }
 
 .dark * {
     --accent: #da1bda;
     --accent-dark: #c712c7;
-    --accent-focus: #da1bda65;
     --border: #4e4e5c;
     --text: rgb(225, 225, 225);
+    --text-light: black;
     --background: #212131;
+    --link: #7bb8fe;
 }
 
 * {
@@ -38,7 +40,23 @@ body {
 
 a {
     text-decoration: none;
+    color: var(--link);
 }
+
+h1, h2 {
+    letter-spacing: -1px;
+}
+
+code {
+    padding: 0px 5px;
+    border-radius: 4px;
+    background-color: var(--border);
+}
+
+ul, ol {
+    margin-left: 40px;
+}
+
 
 .g-page-center {
     display: flex;
@@ -48,7 +66,7 @@ a {
     width: 100vw;
 }
 
-.g-row-center {
+.g-center-row {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -71,7 +89,7 @@ a {
     flex-direction: column;
 }
 
-.g-center-page {
+.g-article {
     max-width: 1000px;
     margin: 50px 80px;
 }

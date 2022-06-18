@@ -2,8 +2,12 @@ import Layout from "../components/Layout"
 
 const Blog = () => {
     return (
-        <Layout>
-            <h1>Blog</h1>
+        <Layout page = "Blog">
+            <div className = "g-center-row">
+                <div className = "g-article">
+                    <h1>Blog</h1>
+                </div>
+            </div>
         </Layout>
     )
 }

@@ -1,4 +1,5 @@
 import Navbar from "./Navbar"
+import Metadata from "./Metadata"
 import { useState, useEffect } from "react"
 
 const Layout = (props) => {
@@ -19,6 +20,7 @@ const Layout = (props) => {
 
     return (
         <>
+            <Metadata page = {props.page} />
             <div className = {theme}>
                 <Navbar theme = {theme} toggleTheme = {() => toggleTheme()} />
                 <div className = "container">
@@ -28,7 +30,7 @@ const Layout = (props) => {
             <style jsx>{`
                 .container {
                     width: 100vw;
-                    height: 100vh;
+                    min-height: 100vh;
                     background-color: var(--background);
                     color: var(--text);
                 }

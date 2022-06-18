@@ -23,13 +23,13 @@ const Navbar = (props) => {
             <nav className="navbar">
                 <Link href="/">
                     <a className="nav-logo-container g-row">
-                        <div className="nav-logo g-row-center">
+                        <div className="nav-logo g-center-row">
                             <img src="/images/logo.png" className="nav-logo-image" />
                             Rohan Phanse
                         </div>
                     </a>
                 </Link>
-                <div className="nav-links g-row-center">
+                <div className="nav-links g-center-row">
                     <NavLink href="/">Home</NavLink>
                     <NavLink href="/about">About</NavLink>
                     <NavLink href="/projects">Projects</NavLink>
