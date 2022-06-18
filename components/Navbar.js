@@ -59,6 +59,24 @@ const Navbar = (props) => {
 
                 @media only screen and (max-width: 1100px) {
                     .navbar {
+                        grid-template-columns: 220px 1fr 50px;
+                    }
+
+                    .nav-links {
+                        justify-content: flex-start !important;
+                    }
+
+                    .nav-logo-container {
+                        justify-content: flex-start !important;
+                    }
+
+                    .theme-button-container {
+                        justify-content: flex-end;
+                    }
+                }
+
+                @media only screen and (max-width: 800px) {
+                    .navbar {
                         display: flex;
                         justify-content: space-between;
                     }
@@ -161,7 +179,7 @@ const NavDropdown = (props) => {
                     border-bottom: 1px solid var(--border);
                 }
 
-                @media only screen and (min-width: 1100px) {
+                @media only screen and (min-width: 800px) {
                     .show {
                         display: none !important;
                     }
