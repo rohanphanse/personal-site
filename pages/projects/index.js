@@ -11,7 +11,7 @@ const Projects = () => {
                     <div className = "g-article">
                         <h1>Featured Projects</h1>
                         {projects.map((project) => (
-                            <ProjectCard project = {project} />
+                            <ProjectCard project = {project} key = {project.id} />
                         ))}
                     </div>
                 </div>
