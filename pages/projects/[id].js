@@ -27,6 +27,7 @@ const Project  =  ({ project, body }) => {
                                     <a
                                         href = {project.url}
                                         target = "_blank"
+                                        rel = "noreferrer"
                                         className = "open-link"
                                     >
                                         <FontAwesomeIcon icon = {faArrowUpRightFromSquare} />
