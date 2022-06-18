@@ -51,9 +51,8 @@ const Project  =  ({ project, body }) => {
                                     <div className = "body">
                                         <div className = "markdown">
                                             <Markdown
-                                                children = {body}
                                                 rehypePlugins = {[rehypeRaw, rehypeHighlight]}
-                                            />
+                                            >{body}</Markdown>
                                         </div>
                                     </div>
                                 </div>
