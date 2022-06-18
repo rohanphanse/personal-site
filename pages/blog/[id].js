@@ -25,8 +25,7 @@ const Article  =  ({ article, body }) => {
                                 <div className = "date">
                                     {article.date.month + " " + article.date.year}
                                 </div>
-                               
-                                
+                                <img src = {article.thumbnail} alt = {article.title} className = "thumbnail" />
                                 <div className = "body-container">
                                     <div className = "body">
                                         <div className = "markdown">
@@ -127,7 +126,7 @@ const Article  =  ({ article, body }) => {
 
                         .body {
                             width: 800px;
-                            margin: 20px 0;
+                            margin: 0 0 20px 0;
                         }
 
                         @media only screen and (max-width: 800px) {
@@ -154,6 +153,13 @@ const Article  =  ({ article, body }) => {
                             border-radius: 4px;
                             background-color: var(--border);
                             color: var(--text);
+                        }
+
+                        .thumbnail {
+                            width: 100%;
+                            object-fit: contain;
+                            border: 1px solid var(--border);
+                            margin-top: 20px;
                         }
                     `}</style>
                 </>

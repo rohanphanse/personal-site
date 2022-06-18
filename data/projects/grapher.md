@@ -21,7 +21,7 @@ I love [Desmos](https://www.desmos.com/calculator) and use it all the time, but 
 
 For this demo, I've graphed the parabola `x^2`, the sine curve `sin(x) - 2`, the line `-3(x + 4)`, and the function `1/x`.
 
-<div class = "g-row-center">
+<div class = "g-center-row">
     <img src = "https://raw.githubusercontent.com/rohanphanse/grapher/main/images/functions.png" style = "width: 75%;" alt = "Functions Demo" style = "margin: 0 auto" />
 </div>
 
@@ -46,7 +46,7 @@ For this demo, I'm graphing the family of sine curves `sin(x) + C` and the slope
 
 For this demo, I've graphed a dipole vector field, which represents the electric field lines between a positive and negative charge in physics.
 
-<div class = "g-row-center">
+<div class = "g-center-row">
     <img src = "https://raw.githubusercontent.com/rohanphanse/grapher/main/images/dipole.png" style = "width: 75%;" alt = "Vector Field Demo" style = "margin: 0 auto" />
 </div>
 
@@ -74,13 +74,13 @@ For this demo, I've graphed 4 polar curves:
 
 For this demo, I've graphed the beautiful [butterfly curve](https://en.wikipedia.org/wiki/Butterfly_curve_(transcendental)). Because this curve is so intricate, I upped the numbers of intervals from 1,000 (default) to 10,000.
 
-<div class = "g-row-center">
+<div class = "g-center-row">
     <img src = "https://raw.githubusercontent.com/rohanphanse/grapher/main/images/butterfly.png" style = "width: 75%" alt = "Function Demo" />
 </div>
 
 Bonus: [Gamma](https://en.wikipedia.org/wiki/Gamma_function) function, the continuation of the factorial function to decimal and complex numbers (graphed with 10,000 intervals). 
 
-<div class = "g-row-center">
+<div class = "g-center-row">
     <img src = "https://raw.githubusercontent.com/rohanphanse/grapher/main/images/gamma.png" style = "width: 75%" alt = "Vector Field Demo" style = "margin: 0 auto" />
 </div>
 

@@ -51,12 +51,16 @@ code {
     padding: 0px 5px;
     border-radius: 4px;
     background-color: var(--border);
+    font-size: 1rem;
 }
 
 ul, ol {
     margin-left: 40px;
 }
 
+p {
+    line-height: 1.4rem;
+}
 
 .g-page-center {
     display: flex;
