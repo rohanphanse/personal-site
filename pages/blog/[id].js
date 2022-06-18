@@ -1,52 +1,32 @@
 import Layout from "../../components/Layout"
-import LanguageTag from "../../components/LanguageTag"
-import { projects, projectsByID } from "../../data/projects"
+import { articles, articlesByID } from "../../data/blog"
 import Error from "next/error"
 import { readFileSync } from "fs"
 import Markdown from "react-markdown"
 import rehypeRaw from "rehype-raw"
 import rehypeHighlight from "rehype-highlight"
 import Link from "next/link"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons"
 
 
-const Project  =  ({ project, body }) => {
+const Article  =  ({ article, body }) => {
     return (
         <>
-            {project === "Error" ? (
+            {article === "Error" ? (
                 <Error />
             ) : (
                 <>
-                    <Layout page = {project.title}>
+                    <Layout page = {article.title}>
                         <div className = "g-center-row">
                             <div className = "g-article">
-                                <div className = "back-link">Back to <Link href = "/projects"><a>/projects</a></Link></div>
+                                <div className = "back-link">Back to <Link href = "/blog"><a>/blog</a></Link></div>
                                 <h1 className = "title g-center-row">
-                                    {project.title}
-                                    <a
-                                        href = {project.url}
-                                        target = "_blank"
-                                        rel = "noreferrer"
-                                        className = "open-link"
-                                    >
-                                        <FontAwesomeIcon icon = {faArrowUpRightFromSquare} />
-                                    </a>
+                                    {article.title}
                                 </h1>
                                 <div className = "date">
-                                    {project.date.month + " " + project.date.year}
+                                    {article.date.month + " " + article.date.year}
                                 </div>
-                                <div className = "languages">
-                                    {project.languages.map((language) => (
-                                        <LanguageTag language = {language} key = {language} />
-                                    ))}
-                                </div>
-                                <div className = "wrapper-container">
-                                    <div className = "wrapper">
-                                        <iframe className = "frame" src = {project.url} />
-                                        <div className = "live-demo">Live Demo</div>
-                                    </div>
-                                </div>
+                               
+                                
                                 <div className = "body-container">
                                     <div className = "body">
                                         <div className = "markdown">
@@ -57,9 +37,9 @@ const Project  =  ({ project, body }) => {
                                     </div>
                                 </div>
                                 <div className = "center">
-                                    <Link href = "/projects">
-                                        <a className = "back-to-projects">
-                                            Back To All Projects
+                                    <Link href = "/blog">
+                                        <a className = "back-to-articles">
+                                            Back To All Articles
                                         </a>
                                     </Link>
                                 </div>
@@ -71,6 +51,7 @@ const Project  =  ({ project, body }) => {
                             display: flex;
                             flex-direction: row;
                             justify-content: center;
+                            position: relative;
 
                             --width: 800px;
                             --height: 500px;
@@ -80,7 +61,6 @@ const Project  =  ({ project, body }) => {
                         .wrapper {
                             width: var(--width);
                             height: var(--height);
-                            position: relative;
                         }
 
                         .frame {
@@ -136,6 +116,7 @@ const Project  =  ({ project, body }) => {
                             height: 25px;
                             width: 25px;
                             font-size: 1.5rem;
+                            cursor: pointer;
                         }
 
                         .body-container {
@@ -168,7 +149,7 @@ const Project  =  ({ project, body }) => {
                             justify-content: center;
                         }
 
-                        .back-to-projects {
+                        .back-to-articles {
                             padding: 10px 15px;
                             border-radius: 4px;
                             background-color: var(--border);
@@ -183,25 +164,25 @@ const Project  =  ({ project, body }) => {
 
 export const getStaticProps  =  async (context) => {
     const id = context.params.id
-    const project = projectsByID[id] || "Error"
+    const article = articlesByID[id] || "Error"
     let body = ""
 
     try {
-        body = readFileSync(`${process.cwd()}/data/projects/${id}.md`, "utf8")
+        body = readFileSync(`${process.cwd()}/data/blog/${id}.md`, "utf8")
     } catch (error) {
         console.log(error)
     }
 
     return {
         props: {
-            project,
+            article,
             body
         }
     }
 }
 
 export const getStaticPaths  =  async () => {
-    const ids  = projects.map((project) => project.id)
+    const ids  = articles.map((article) => article.id)
     const paths = ids.map((id) => ({ params: { id } }))
 
     return {
@@ -210,4 +191,4 @@ export const getStaticPaths  =  async () => {
     }
 }
 
-export default Project
+export default Article

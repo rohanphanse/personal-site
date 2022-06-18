@@ -90,7 +90,7 @@ ul, ol {
 }
 
 .g-article {
-    max-width: 1000px;
+    width: 800px;
     margin: 50px 80px;
 }
 
