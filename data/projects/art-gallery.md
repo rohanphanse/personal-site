@@ -1,4 +1,4 @@
-Source Code: <a href = "https://github.com/rohanphanse/art-gallery" target = "_blank">https://github.com/rohanphanse/art-gallery</a>
+Source Code: <a href = "https://github.com/rohanphanse/art-gallery" target = "_blank" rel="noreferrer">https://github.com/rohanphanse/art-gallery</a>
 
 # Art Gallery
 
@@ -6,7 +6,7 @@ Decentralized art gallery built on NEAR blockchain with AssemblyScript and React
 
 **Demo: <a href = "https://rohanphanse.github.io/art-gallery/" target = "_blank">https://rohanphanse.github.io/art-gallery/</a>**
 
-Learned how to deploy and interact with smart contracts on NEAR thanks to this amazing tutorial: <a href = "https://dacade.org/communities/near/courses/near-101" target = "_blank">https://dacade.org/communities/near/courses/near-101</a>.
+Learned how to deploy and interact with smart contracts on NEAR thanks to this amazing tutorial: <a href = "https://dacade.org/communities/near/courses/near-101" target = "_blank" rel="noreferrer">https://dacade.org/communities/near/courses/near-101</a>.
 
 ## Features
 * Allow users to upload artworks to NEAR blockchain
