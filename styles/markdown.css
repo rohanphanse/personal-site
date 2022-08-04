@@ -87,3 +87,35 @@ pre {
     line-height: 1.5rem;
 }
 
+.two-table {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: 1px solid var(--border);
+    border-bottom: 0px;
+    margin-bottom: 30px;
+}
+
+.two-table-item {
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.two-table-item:nth-child(odd) {
+    border-right: 1px solid var(--border);
+}
+
+.two-table-header {
+    font-size: 1.1rem;
+    letter-spacing: -0.5px;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    border-bottom: 1px solid var(--border);
+}
+
+.two-table-header:nth-child(odd) {
+    border-right: 1px solid var(--border);
+}

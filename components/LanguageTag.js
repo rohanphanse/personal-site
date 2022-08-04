@@ -8,7 +8,9 @@ const LanguageTag = ({ language }) => {
         React: { color: "#61dbfb" },
         "Next.js": { color: "white", border: "var(--text)" },
         "AssemblyScript": { color: "#1791e3", text: "light" },
-        "NEAR": { color: "white", border: "var(--text)" }
+        "NEAR": { color: "white", border: "var(--text)" },
+        "Rust": { color: "#b7410e", text: "light" },
+        "Node.js": { color: "#6cc24a" }
     }
     const { color, text, border } = languageTags[language]
     return (
@@ -21,7 +23,7 @@ const LanguageTag = ({ language }) => {
                     padding: 3px 7px;
                     border-radius: 4px;
                     border: 1px solid ${border || color};
-                    margin: 0 3px;
+                    margin: 3px 3px;
                     background-color: ${color};
                 }
             `}</style>

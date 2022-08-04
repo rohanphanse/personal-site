@@ -173,6 +173,11 @@ const Project  =  ({ project, body }) => {
                             border-radius: 4px;
                             background-color: var(--border);
                             color: var(--text);
+                            transition-duration: 0.2s;
+                        }
+
+                        .back-to-projects:hover {
+                            transform: translateY(-2px);
                         }
                     `}</style>
                 </>

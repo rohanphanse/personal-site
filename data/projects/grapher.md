@@ -1,7 +1,7 @@
 <div class = "close-lines">
 Source Code: <a href = "https://github.com/rohanphanse/grapher" target = "_blank">https://github.com/rohanphanse/grapher</a>
 
-Live Demo: <a href = "https://grapher.roar123.repl.co" target = "_blank">https://grapher.roar123.repl.co
+Live Demo: <a href = "https://ste.roar123.repl.co" target = "_blank">https://grapher.roar123.repl.co
 </a>
 </div>
 
