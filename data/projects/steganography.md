@@ -11,7 +11,7 @@ Steganography is a form of cryptography where a hidden message is concealed insi
 
 ## Development Process
 
-I wrote this program in Rust and gained experience with using the `image` crate from this amazing tutorial by freeCodeCamp (<a href = "https://www.freecodecamp.org/news/rust-in-replit/" target = "_blank">link</a>).
+I wrote this program in Rust and gained experience with using the `image` crate from this amazing tutorial by freeCodeCamp (<a href = "https://www.freecodecamp.org/news/rust-in-replit/" target = "_blank" rel="noreferrer">link</a>).
 
 ## Featured Code
 
