@@ -13,6 +13,13 @@ export const articles = [
         date: { month: "June", year: 2022 },
         thumbnail: "/images/blog/paly-python-website.png",
     },
+    {
+        id: "paly-python-parikrma-mission",
+        title: "Paly Python's Parikrma Mission", 
+        description: "What I taught the 60 Parikrma students in Bangalore — the fundamentals of computer science — and what they taught me — the power of boundless optimism and perseverance.",
+        date: { month: "August", year: 2022 },
+        thumbnail: "/images/blog/koramangala-group.jpeg",
+    },
 ]
 
 export const articlesByID = {}
