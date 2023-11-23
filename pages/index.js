@@ -6,10 +6,10 @@ const Home = () => {
             <div className = "g-center-row">
                 <div className = "g-article">
                     <div className = "bio">
-                        <img src = "/images/rohan.jpg" alt = "Rohan's beautiful face :)" className = "bio-image" />
+                        <img src = "/images/rohan-with-handsome-dan.jpg" alt = "Rohan" className = "bio-image" />
                         <div className = "g-column">
-                            <h1>Hi I&apos;m Rohan.</h1>
-                            <p>I&apos;m a 12th grader at Palo Alto High School. I&apos;m passionate about solving problems with computer science and math. I&apos;m the Founder and President of Paly Python (<a href = "https://palypython.com" target = "_blank" rel="noreferrer">palypython.com</a>). In my free time, I love reading (Seven Realms ❤️) and listening to music (Kid Cudi & Joyner Lucas 🔥).</p>
+                            <h1>Hello, I&apos;m Rohan.</h1>
+                            <p>I am a first-year student at Yale University. I really enjoy CS development and research, and I'm excited to continue pursuing these disciplines in college. In my free time, I love singing / playing rock songs on my guitar and finding new people to play table tennis with :).</p>
                         </div>
                     </div>
                 </div>
@@ -22,9 +22,11 @@ const Home = () => {
                 }
 
                 .bio-image {
-                    margin: 0 40px 20px 0;
+                    margin: 30px 70px 20px 0;
                     width: 200px;
                     border-radius: 8px;
+                    transform: scale(1.3);
+                    filter: brightness(1.2);
                 }
 
                 @media only screen and (max-width: 600px) {

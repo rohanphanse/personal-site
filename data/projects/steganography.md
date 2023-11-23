@@ -55,11 +55,11 @@ My steganographer passes my tests with flying colors on `.png` files and fails o
 
 ## Examples
 
-*Credit to pngimg.com for [Mario](https://pngimg.com/image/30596) and Stack Overflow post for [Linux Penguin](https://stackoverflow.com/questions/24450999/add-border-around-png-image-using-imagick-php).*
+*Credit to pngimg.com for [Mario](https://pngimg.com/image/30596) and Stack Overflow post for [Tux](https://stackoverflow.com/questions/24450999/add-border-around-png-image-using-imagick-php).*
 
 <div class = "two-table">
     <div class = "two-table-header">Main - Mario</div>
-    <div class = "two-table-header">Hidden - Penguin</div>
+    <div class = "two-table-header">Hidden - Tux</div>
     <div class = "two-table-item">
         <img src = "https://raw.githubusercontent.com/rohanphanse/steganography/main/images/mario.png" alt = "mario - main image" />
     </div>
@@ -69,8 +69,8 @@ My steganographer passes my tests with flying colors on `.png` files and fails o
 </div>
 
 <div class = "two-table">
-    <div class = "two-table-header">Encrypted (Penguin Hidden in Mario)</div>
-    <div class = "two-table-header">Decrypted (Penguin Revealed 🥳)</div>
+    <div class = "two-table-header">Encrypted (Tux Hidden in Mario)</div>
+    <div class = "two-table-header">Decrypted (Tux Revealed 🥳)</div>
     <div class = "two-table-item">
         <img src = "https://raw.githubusercontent.com/rohanphanse/steganography/main/images/mar-peng-enc.png" alt = "mario penguin - encrypted image" />
     </div>
