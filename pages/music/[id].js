@@ -2,9 +2,6 @@ import Layout from "../../components/Layout"
 import { songs, songsByID } from "../../data/music"
 import Error from "next/error"
 import { readFileSync } from "fs"
-import Markdown from "react-markdown"
-import rehypeRaw from "rehype-raw"
-import rehypeHighlight from "rehype-highlight"
 import Link from "next/link"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons"
@@ -44,9 +41,7 @@ const Song  =  ({ song, body }) => {
                                 <div className = "body-container">
                                     <div className = "body">
                                         <div className = "markdown">
-                                            <Markdown
-                                                rehypePlugins = {[rehypeRaw, rehypeHighlight]}
-                                            >{body}</Markdown>
+                                           
                                         </div>
                                     </div>
                                 </div>
