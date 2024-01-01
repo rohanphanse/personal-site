@@ -3,15 +3,28 @@ import LanguageTag from "../../components/LanguageTag"
 import { projects, projectsByID } from "../../data/projects"
 import Error from "next/error"
 import { readFileSync } from "fs"
-import Markdown from "react-markdown"
-import rehypeRaw from "rehype-raw"
-import rehypeHighlight from "rehype-highlight"
 import Link from "next/link"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons"
+import { useEffect } from "react"
+import Prism from "prismjs"
+import { remark } from "remark"
+import html from "remark-html"
+import remarkPrism from "remark-prism"
+require("prismjs/components/prism-rust")
 
+async function markdownToHtml(markdown) {
+    const result = await remark()
+        .use(html, { sanitize: false })
+        .use(remarkPrism)
+        .process(markdown)
+    return result.toString()
+}
 
 const Project  =  ({ project, body }) => {
+    useEffect(() => {
+        Prism.highlightAll()
+      }, [])
     return (
         <>
             {project === "Error" ? (
@@ -50,9 +63,7 @@ const Project  =  ({ project, body }) => {
                                 <div className = "body-container">
                                     <div className = "body">
                                         <div className = "markdown">
-                                            <Markdown
-                                                rehypePlugins = {[rehypeRaw, rehypeHighlight]}
-                                            >{body}</Markdown>
+                                            <div dangerouslySetInnerHTML={{ __html: body }}></div>
                                         </div>
                                     </div>
                                 </div>
@@ -192,7 +203,7 @@ export const getStaticProps  =  async (context) => {
     let body = ""
 
     try {
-        body = readFileSync(`${process.cwd()}/data/projects/${id}.md`, "utf8")
+        body = await markdownToHtml(readFileSync(`${process.cwd()}/data/projects/${id}.md`, "utf8"))
     } catch (error) {
         console.log(error)
     }

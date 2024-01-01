@@ -31,19 +31,21 @@ const Navbar = (props) => {
                 </Link>
                 <div className="nav-links g-center-row">
                     <NavLink href="/">Home</NavLink>
-                    <NavLink href="/about">About</NavLink>
+                    {/* <NavLink href="/about">About</NavLink> */}
                     <NavLink href="/projects">Projects</NavLink>
                     <NavLink href="/blog">Blog</NavLink>
                     <NavLink href="/contact">Contact</NavLink>
                 </div>
-                <div className="theme-button-container g-row">
-                    <button className="button" onClick={() => props.toggleTheme()}>
-                        <FontAwesomeIcon icon={props.theme === "light" ? faMoon : faSun} />
+                <div className = "buttons">
+                    <div className="theme-button-container g-row">
+                        <button className="button" onClick={() => props.toggleTheme()}>
+                            <FontAwesomeIcon icon={props.theme === "light" ? faMoon : faSun} />
+                        </button>
+                    </div>
+                    <button className="menu-button button" onClick = {() => toggleDropdown()}>
+                        <FontAwesomeIcon icon={faBars} />
                     </button>
                 </div>
-                <button className="menu-button button" onClick = {() => toggleDropdown()}>
-                    <FontAwesomeIcon icon={faBars} />
-                </button>
             </nav>
             <NavDropdown dropdownRef = {dropdownRef} />
             <style jsx>{`
@@ -85,10 +87,6 @@ const Navbar = (props) => {
                         display: none;
                     }
 
-                    .theme-button-container {
-                        display: none;
-                    }
-
                     .menu-button {
                         display: flex !important;
                     }
@@ -121,8 +119,14 @@ const Navbar = (props) => {
                 }
 
                 .menu-button {
+                    color: var(--text);
                     display: none;
                     padding: 7px;
+                    margin-left: 10px;
+                }
+                
+                .buttons {
+                    display: flex;
                 }
             `}</style>
         </>

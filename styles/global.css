@@ -8,7 +8,7 @@
     --text-light: white;
     --background: white;
     --link: #0070f3;
-}
+} 
 
 .dark * {
     --accent: #da1bda;
@@ -47,6 +47,10 @@ h1, h2 {
     letter-spacing: -1px;
 }
 
+h3 {
+    letter-spacing: -0.5px;
+}
+
 code {
     padding: 0px 5px;
     border-radius: 4px;
@@ -61,6 +65,7 @@ ul, ol {
 p {
     line-height: 1.4rem;
 }
+
 
 .g-page-center {
     display: flex;
@@ -97,4 +102,3 @@ p {
     width: 800px;
     margin: 50px 80px;
 }
-

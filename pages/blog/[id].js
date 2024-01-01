@@ -2,11 +2,22 @@ import Layout from "../../components/Layout"
 import { articles, articlesByID } from "../../data/blog"
 import Error from "next/error"
 import { readFileSync } from "fs"
-import Markdown from "react-markdown"
-import rehypeRaw from "rehype-raw"
-import rehypeHighlight from "rehype-highlight"
 import Link from "next/link"
+import { useEffect } from "react"
+import Prism from "prismjs"
+import { remark } from "remark"
+import html from "remark-html"
+import remarkPrism from "remark-prism"
+require("prismjs/components/prism-rust")
+require("prismjs/components/prism-haskell")
 
+async function markdownToHtml(markdown) {
+    const result = await remark()
+        .use(html, { sanitize: false })
+        .use(remarkPrism)
+        .process(markdown)
+    return result.toString()
+}
 
 const Article  =  ({ article, body }) => {
     return (
@@ -29,9 +40,7 @@ const Article  =  ({ article, body }) => {
                                 <div className = "body-container">
                                     <div className = "body">
                                         <div className = "markdown">
-                                            <Markdown
-                                                rehypePlugins = {[rehypeRaw, rehypeHighlight]}
-                                            >{body}</Markdown>
+                                            <div dangerouslySetInnerHTML={{ __html: body }}></div>
                                         </div>
                                     </div>
                                 </div>
@@ -174,7 +183,7 @@ export const getStaticProps  =  async (context) => {
     let body = ""
 
     try {
-        body = readFileSync(`${process.cwd()}/data/blog/${id}.md`, "utf8")
+        body = await markdownToHtml(readFileSync(`${process.cwd()}/data/blog/${id}.md`, "utf8"))
     } catch (error) {
         console.log(error)
     }

@@ -1,14 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&display=swap');
+
 .markdown h1, h2 {
-    margin: 30px 0 15px 0;
+    margin: 20px 0 10px 0;
+    font-size: 2rem;
 }
 
-.markdown p {
-    margin: 15px 0;
-    line-height: 1.5rem;
+.markdown h1 {
+    font-size: 2rem;
+}
+
+.markdown h2 {
+    font-size: 1.7rem;
+}
+
+.markdown h3 {
+    font-size: 1.4rem;
+}
+
+.markdown p, .markdown ul, .markdown ol {
+    margin: 20px 0;
+    line-height: 2rem;
+    font-family: 'PT Serif', serif;
+    font-size: 1.3rem;
+}
+
+.markdown ul, .markdown ol {
+    margin-left: 50px;
 }
 
 .markdown strong {
     color: var(--text) !important;
+    font-family: "Open Sans", sans-serif;
+    letter-spacing: -0.5px;
 }
 
 .markdown .two-image-row {
@@ -20,11 +43,15 @@
 
 .markdown .two-image-row img {
     width: 50%;
-    margin: 10px;
+    margin: 5px;
 }
 
 .markdown .close-lines {
     line-height: 10px;
+}
+
+.markdown .close-lines p {
+    margin: 5px;
 }
 
 .markdown img {
@@ -67,6 +94,14 @@
     margin: 20px 0;
 }
 
+.markdown code {
+    font-size: 1.1rem !important;
+}
+
+.markdown pre code {
+    font-size: 1rem !important;
+}
+
 select {
     -moz-appearance: none;
     -webkit-appearance: none;
@@ -80,7 +115,6 @@ pre {
     overflow-x: auto;
     white-space: pre-wrap;
     word-wrap: break-word;
-    background-color: var(--border);
     padding: 10px;
     border-radius: 8px;
     font-size: 0.9rem;
@@ -118,4 +152,12 @@ pre {
 
 .two-table-header:nth-child(odd) {
     border-right: 1px solid var(--border);
+}
+
+.caption {
+    margin-top: 5px;
+    display: inline;
+    text-align: center;
+    margin-bottom: 10px;
+    opacity: 0.7;
 }

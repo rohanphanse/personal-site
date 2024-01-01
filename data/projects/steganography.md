@@ -1,3 +1,11 @@
+<div class = "close-lines">
+
+Source Code: <a href = "https://github.com/rohanphanse/steganography" target = "_blank" rel="noreferrer">https://github.com/rohanphanse/steganography</a>
+
+Live Demo: <a href = "https://replit.com/@Roar123/steganography?embed=true" target = "_blank" rel="noreferrer">https://replit.com/@Roar123/steganography?embed=true
+</a>
+</div>
+
 # Steganography
 
 Steganography is a form of cryptography where a hidden message is concealed inside another message. For images, this process works by encrypting the most significant bits of a hidden image into the least significant bits of a main image, and then displaying the hidden image bits to reveal the image. The beauty of the steganography is that the hidden bits fly under the human vision radar, yet the information is readily available for the computer to decrypt it.
@@ -11,27 +19,29 @@ Steganography is a form of cryptography where a hidden message is concealed insi
 
 ## Development Process
 
-I wrote this program in Rust and gained experience with using the `image` crate from this amazing tutorial by freeCodeCamp (<a href = "https://www.freecodecamp.org/news/rust-in-replit/" target = "_blank" rel="noreferrer">link</a>).
+I wrote this program in Rust and gained experience with using the <code class = "language-txt">image</code> crate from this amazing tutorial by freeCodeCamp (<a href = "https://www.freecodecamp.org/news/rust-in-replit/" target = "_blank" rel="noreferrer">link</a>).
 
 ## Featured Code
 
 I want to feature 2 pieces of code, because they were the most rewarding and challenging things to get right.
 
-**1. Bit Manipulation**
+### 1. Bit Manipulation
 
-This was super fun for me to figure out and I learned how to use the bitwise operators `AND &`, `OR |`, and `<< BITSHIFT >>`.
+This was super fun for me to figure out and I learned how to use the bitwise operators <code class = "language-txt">AND &</code>, <code class = "language-txt">OR |</code>, and <code class = "language-txt"><< BITSHIFT >></code>.
 
 ```rust
-// src/main.rs, line 134
+// src/main.rs, line 129
 encrypted.push(
     (main_pixel[i] & 0b_1111_1000) +        // Replace last 3 bits of main pixel
     ((hidden_pixel[i] & 0b_1110_0000) >> 5) // with first 3 bits of hidden pixel
 );
 ```
 
-**2. Traversing Through Image Buffer**
+The code above creates an encrypted pixel where the three least significant bits of the main image are replaced with the three most significant bits of the hidden pixel. The result is that the encrypted image resembles the main image to ~97% accuracy, but contains enough information to reassemble the hidden image to ~88% accuracy. This is how steganography slips hidden images under the human radar while allowing computers to recover them. 
 
-Images are stored in buffers (1d arrays), so I had to figure out how to traverse the buffer while keeping track of the 2d location of the pixels. After a lot of mindless debugging, I realized that `image_height * image_width * 4 == buffer_length` and having reached enlightenment, I blissfully wrote the code below in a state of nirvana.
+### 2. Traversing Through Image Buffer
+
+Images are stored in buffers (1d arrays), so I had to figure out how to traverse the buffer while keeping track of the 2d location of the pixels. After a lot of mindless debugging, I realized that <code class = "language-txt">image_height * image_width * 4 == buffer_length</code> and having reached enlightenment, I blissfully wrote the code below in a state of nirvana.
 
 ```rust
 // src/main.rs, lines 97-107
@@ -50,7 +60,7 @@ for h in 0..main_height {
 
 ## Testing
 
-My steganographer passes my tests with flying colors on `.png` files and fails on `.jpg` (I suspect that jpeg does some compression which conflicts with my bit manipulations).
+My steganographer passes my tests with flying colors on <code class = "language-txt">.png</code> files and fails on <code class = "language-txt">.jpg</code> (I suspect that jpeg does some compression which conflicts with my bit manipulations).
 
 
 ## Examples

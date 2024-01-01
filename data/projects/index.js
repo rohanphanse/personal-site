@@ -39,16 +39,15 @@ export const projects = [
         categories: ["featured"],
         thumbnail: "/images/projects/serve-static-directory-thumbnail.png"
     },
-]
-
-export const categories = [
     {
-        id: "featured",
-        title: "Featured Projects"
-    },
-    {
-        id: "dapps",
-        title: "Decentralized Apps (dApps)"
+        id: "shape-wars",
+        title: "Shape Wars",
+        description: "A war has risen among the shapes. Fight against the waves of relentless triangles and defend the circle at all costs.",
+        date: { month: "April", year: 2021 },
+        url: "https://shape-wars.roar123.repl.co",
+        languages: ["HTML", "CSS", "JavaScript"],
+        categories: ["featured"],
+        thumbnail: "/images/projects/shape-wars.png"
     },
 ]
 

@@ -1,8 +1,8 @@
 Image of Paly Python website, visit at <a href = "https://palypython.com" target = "_blank">palypython.com</a>.
 
-# Paly Python Summer Camps
+Read on Medium: <a href = "https://rohanphanse.medium.com/paly-python-summer-camps-5e6433e3cd5c" target = "_blank" rel="noreferrer">https://rohanphanse.medium.com/paly-python-summer-camps-5e6433e3cd5c</a>
 
-*Note: This article was written in July 2020.*
+# Paly Python Summer Camps
 
 Hello everyone, my name is Rohan Phanse and I am the founder and president of Paly Python, a programming club at Palo Alto High School. We just concluded our free programming summer camps for students - here's how they went.
 

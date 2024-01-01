@@ -46,17 +46,6 @@ const Projects = () => {
                     padding: 50px 0 20px 0;
                 }
 
-                @media only screen and (min-width: 1700px) {
-                    .projects {
-                        grid-template-columns: repeat(6, 1fr);
-                        max-width: 80vw;
-                    }
-                }
-                @media only screen and (max-width: 950px) {
-                    .projects {
-                        grid-template-columns: repeat(3, 1fr);
-                    }
-                }
                 @media only screen and (max-width: 950px) {
                     .projects {
                         grid-template-columns: repeat(3, 1fr);
@@ -116,18 +105,18 @@ const ProjectCard = ({ project }) => {
 
                 .thumbnail {
                     margin-bottom: 10px;
-                    height: 120px;
+                    height: 150px;
                     width: 100%;
                     object-fit: cover;
                     border-radius: 4px;
                 }
 
                 .description {
-                    font-size: 0.9rem;
+                    font-size: 1rem;
                 }
 
                 .title {
-                    font-size: 1.3rem;
+                    font-size: 1.5rem;
                     font-weight: bold;
                     letter-spacing: -0.5px;
                     text-align: center;
@@ -135,7 +124,7 @@ const ProjectCard = ({ project }) => {
                 }
 
                 .date {
-                    font-size: 0.9rem;
+                    font-size: 1rem;
                     margin-bottom: 10px;
                 }
 
@@ -203,18 +192,18 @@ const SongCard = ({ song }) => {
 
                 .thumbnail {
                     margin-bottom: 10px;
-                    height: 120px;
+                    height: 150px;
                     width: 100%;
                     object-fit: cover;
                     border-radius: 4px;
                 }
 
                 .description {
-                    font-size: 0.9rem;
+                    font-size: 1rem;
                 }
 
                 .title {
-                    font-size: 1.3rem;
+                    font-size: 1.5rem;
                     font-weight: bold;
                     letter-spacing: -0.5px;
                     text-align: center;
@@ -222,7 +211,7 @@ const SongCard = ({ song }) => {
                 }
 
                 .date {
-                    font-size: 0.9rem;
+                    font-size: 1rem;
                     margin-bottom: 10px;
                 }
 

@@ -1,5 +1,6 @@
 import "../styles/global.css"
 import "../styles/markdown.css"
+import "prismjs/themes/prism.css"
 
 const App = ({ Component, pageProps }) => {
     return (<Component {...pageProps} />)

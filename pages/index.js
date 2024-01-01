@@ -9,7 +9,7 @@ const Home = () => {
                         <img src = "/images/rohan-with-handsome-dan.jpg" alt = "Rohan" className = "bio-image" />
                         <div className = "g-column">
                             <h1>Hello, I&apos;m Rohan.</h1>
-                            <p>I am a first-year student at Yale University. I really enjoy CS development and research, and I&apos;m excited to continue pursuing these disciplines in college. In my free time, I love singing / playing rock songs on my guitar and finding new people to play table tennis with :).</p>
+                            <div className = "desc">I am a first-year student at Yale University. I really enjoy CS development and research, and I&apos;m excited to continue pursuing these disciplines in college. In my free time, I love singing / playing rock songs on my guitar and finding new people to play table tennis with :).</div>
                         </div>
                     </div>
                 </div>
@@ -22,17 +22,26 @@ const Home = () => {
                 }
 
                 .bio-image {
-                    margin: 30px 70px 20px 0;
+                    margin: 30px 60px 40px 60px;
                     width: 200px;
                     border-radius: 8px;
                     transform: scale(1.3);
                     filter: brightness(1.2);
                 }
 
-                @media only screen and (max-width: 600px) {
+                @media only screen and (max-width: 700px) {
                     .bio {
                         flex-direction: column;
                     }
+
+                    .bio-image {
+                        margin-bottom: 60px;
+                    }
+                }
+
+                .desc {
+                    font-size: 1.1rem;
+                    line-height: 1.6rem;
                 }
             `}</style>
         </Layout>
