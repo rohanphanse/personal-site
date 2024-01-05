@@ -2,7 +2,7 @@
 
 Source Code: <a href = "https://github.com/rohanphanse/steganography" target = "_blank" rel="noreferrer">https://github.com/rohanphanse/steganography</a>
 
-Live Demo: <a href = "https://replit.com/@Roar123/steganography?embed=true" target = "_blank" rel="noreferrer">https://replit.com/@Roar123/steganography?embed=true
+Live Demo: <a href = "https://replit.com/@Roar123/steganography" target = "_blank" rel="noreferrer">https://replit.com/@Roar123/steganography
 </a>
 </div>
 

@@ -54,12 +54,16 @@ const Project  =  ({ project, body }) => {
                                         <LanguageTag language = {language} key = {language} />
                                     ))}
                                 </div>
-                                <div className = "wrapper-container">
-                                    <div className = "wrapper">
-                                        <iframe className = "frame" src = {project.url} />
-                                        <div className = "live-demo">Live Demo</div>
+                                {project.url ?
+                                    <div className = "wrapper-container">
+                                        <div className = "wrapper">
+                                            <iframe className = "frame" src = {project.url} />
+                                            <div className = "live-demo">Live Demo</div>
+                                        </div>
                                     </div>
-                                </div>
+                                : 
+                                    <img src = {project.thumbnail} alt = {project.title} className = "thumbnail" />
+                                }
                                 <div className = "body-container">
                                     <div className = "body">
                                         <div className = "markdown">
@@ -189,6 +193,12 @@ const Project  =  ({ project, body }) => {
 
                         .back-to-projects:hover {
                             transform: translateY(-2px);
+                        }
+
+                        .thumbnail {
+                            width: 100%;
+                            object-fit: contain;
+                            border: 1px solid var(--border);
                         }
                     `}</style>
                 </>

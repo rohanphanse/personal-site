@@ -14,7 +14,7 @@ export const projects = [
         title: "Grapher",
         description: "Breaking news: Desmos has been dethroned by upstart Grapher, which supports slope and vector fields!",
         date: { month: "March", year: 2022 },
-        url: "https://grapher.roar123.repl.co",
+        url: "https://rohanphanse.github.io/grapher",
         languages: ["HTML", "CSS", "JavaScript"],
         categories: ["featured"],
         thumbnail: "/images/projects/grapher-thumbnail.png"
@@ -24,17 +24,16 @@ export const projects = [
         title: "Steganography",
         description: "Fly images under the radar by encrypting them into the bits of another image!",
         date: { month: "June", year: 2022 },
-        url: "https://replit.com/@Roar123/steganography?embed=true",
         languages: ["Rust"],
         categories: ["featured"],
-        thumbnail: "/images/projects/steganography-thumbnail.png"
+        thumbnail: "/images/projects/steganography-thumbnail.jpg"
     },
     {
         id: "serve-static-directory",
         title: "Serve Static Directory",
         description: "Recursively generate routes and serve all files in static directory.",
         date: { month: "January", year: 2022 },
-        url: "https://serve-static-directory.roar123.repl.co",
+        url: "https://bit.ly/rp-serve",
         languages: ["Node.js"],
         categories: ["featured"],
         thumbnail: "/images/projects/serve-static-directory-thumbnail.png"
@@ -44,7 +43,7 @@ export const projects = [
         title: "Shape Wars",
         description: "A war has risen among the shapes. Fight against the waves of relentless triangles and defend the circle at all costs.",
         date: { month: "April", year: 2021 },
-        url: "https://shape-wars.roar123.repl.co",
+        url: "https://rohanphanse.github.io/shape-wars",
         languages: ["HTML", "CSS", "JavaScript"],
         categories: ["featured"],
         thumbnail: "/images/projects/shape-wars.png"

@@ -2,7 +2,7 @@
 
 Source Code: <a href = "https://github.com/rohanphanse/serve-static-directory" target = "_blank" rel="noreferrer">https://github.com/rohanphanse/serve-static-directory</a>
 
-Live Demo: <a href = "https://serve-static-directory.roar123.repl.co" target = "_blank" rel="noreferrer">https://serve-static-directory.roar123.repl.co
+Live Demo: <a href = "https://serve-static-directory.onrender.com" target = "_blank" rel="noreferrer">https://serve-static-directory.onrender.com
 </a>
 </div>
 

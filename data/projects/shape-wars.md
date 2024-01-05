@@ -2,7 +2,7 @@
 
 Source Code: <a href = "https://github.com/rohanphanse/shape-wars" target = "_blank" rel="noreferrer">https://github.com/rohanphanse/shape-wars</a>
 
-Live Demo: <a href = "https://shape-wars.roar123.repl.co" target = "_blank" rel="noreferrer">https://shape-wars.roar123.repl.co
+Live Demo: <a href = "https://rohanphanse.github.io/shape-wars" target = "_blank" rel="noreferrer">https://rohanphanse.github.io/shape-wars
 </a>
 </div>
 

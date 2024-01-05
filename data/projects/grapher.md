@@ -2,7 +2,7 @@
 
 Source Code: <a href = "https://github.com/rohanphanse/grapher" target = "_blank" rel="noreferrer">https://github.com/rohanphanse/grapher</a>
 
-Live Demo: <a href = "https://grapher.roar123.repl.co" target = "_blank" rel="noreferrer">https://grapher.roar123.repl.co
+Live Demo: <a href = "https://rohanphanse.github.io/grapher" target = "_blank" rel="noreferrer">https://rohanphanse.github.io/grapher
 </a>
 </div>
 
