@@ -33,7 +33,7 @@ export const projects = [
         title: "Serve Static Directory",
         description: "Recursively generate routes and serve all files in static directory.",
         date: { month: "January", year: 2022 },
-        url: "https://bit.ly/rp-serve",
+        url: "https://serve-static-directory.onrender.com",
         languages: ["Node.js"],
         categories: ["featured"],
         thumbnail: "/images/projects/serve-static-directory-thumbnail.png"
