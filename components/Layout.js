@@ -22,7 +22,7 @@ const Layout = (props) => {
         <>
             <Metadata page = {props.page} />
             <div className = {theme}>
-                <Navbar theme = {theme} toggleTheme = {() => toggleTheme()} />
+                <Navbar theme = {theme} toggleTheme = {() => toggleTheme()} home = {props.home || false} />
                 <div className = "container">
                     {props.children}
                 </div>
@@ -33,6 +33,7 @@ const Layout = (props) => {
                     min-height: 100vh;
                     background-color: var(--background);
                     color: var(--text);
+                    padding-bottom: 100px;
                 }
             `}</style>
         </>

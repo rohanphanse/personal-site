@@ -8,17 +8,24 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons"
 import { useEffect } from "react"
 import Prism from "prismjs"
-import { remark } from "remark"
-import html from "remark-html"
-import remarkPrism from "remark-prism"
+import ReactMarkdown from "react-markdown"
+import rehypePrism from "rehype-prism-plus"
+import rehypeRaw from "rehype-raw"
 require("prismjs/components/prism-rust")
+require("prismjs/components/prism-haskell")
+import ImageModal from "../../components/ImageModal"
+import { visit } from "unist-util-visit"
+require("prismjs/components/prism-bash")
 
-async function markdownToHtml(markdown) {
-    const result = await remark()
-        .use(html, { sanitize: false })
-        .use(remarkPrism)
-        .process(markdown)
-    return result.toString()
+function rehypeExternalLinks() {
+    return (tree) => {
+        visit(tree, "element", (node) => {
+            if (node.tagName === "a" && node.properties) {
+                node.properties.target = "_blank"
+                node.properties.rel = "noopener noreferrer"
+            }
+        })
+    }
 }
 
 const Project  =  ({ project, body }) => {
@@ -37,14 +44,16 @@ const Project  =  ({ project, body }) => {
                                 <div className = "back-link">Back to <Link href = "/projects"><a>/projects</a></Link></div>
                                 <h1 className = "title g-center-row">
                                     {project.title}
-                                    <a
-                                        href = {project.url}
-                                        target = "_blank"
-                                        rel = "noreferrer"
-                                        className = "open-link"
-                                    >
-                                        <FontAwesomeIcon icon = {faArrowUpRightFromSquare} />
-                                    </a>
+                                    {project.category === "programming" && (
+                                        <a
+                                            href = {project.url}
+                                            target = "_blank"
+                                            rel = "noreferrer"
+                                            className = "open-link"
+                                        >
+                                            <FontAwesomeIcon icon = {faArrowUpRightFromSquare} />
+                                        </a>
+                                    )}
                                 </h1>
                                 <div className = "date">
                                     {project.date.month + " " + project.date.year}
@@ -57,8 +66,17 @@ const Project  =  ({ project, body }) => {
                                 {project.url ?
                                     <div className = "wrapper-container">
                                         <div className = "wrapper">
-                                            <iframe className = "frame" src = {project.url} />
-                                            <div className = "live-demo">Live Demo</div>
+                                            {project.image ? (
+                                                <ImageModal>
+                                                    <img src = {project.url} className = "frame-image"></img>
+                                                </ImageModal>
+                                            ) : (
+                                                <>
+                                                    <iframe className = "frame" src = {project.url} />
+                                                    <div className = "live-demo">Live Demo</div>
+                                                </>
+                                            )}
+        
                                         </div>
                                     </div>
                                 : 
@@ -67,7 +85,9 @@ const Project  =  ({ project, body }) => {
                                 <div className = "body-container">
                                     <div className = "body">
                                         <div className = "markdown">
-                                            <div dangerouslySetInnerHTML={{ __html: body }}></div>
+                                            <ReactMarkdown remarkPlugins = {[]} rehypePlugins = {[rehypeRaw, rehypePrism, rehypeExternalLinks]} components={{ 
+                                                img: ({ node, ...props }) => <ImageModal><img {...props} /></ImageModal>
+                                            }}>{body}</ReactMarkdown>
                                         </div>
                                     </div>
                                 </div>
@@ -105,7 +125,12 @@ const Project  =  ({ project, body }) => {
                             transform: scale(var(--scale));
                             transform-origin: 0 0;
                             border: 1px solid var(--border);
-=
+                        }
+
+                        .frame-image {
+                            width: var(--width);
+                            height: var(--height);
+                            object-fit: contain;
                         }
 
                         .live-demo {
@@ -128,6 +153,7 @@ const Project  =  ({ project, body }) => {
                         }
 
                         .title {
+                        margin-top: 10px;
                             margin-bottom: 2px;
                         }
 
@@ -146,6 +172,7 @@ const Project  =  ({ project, body }) => {
                         }
 
                         .open-link {
+                            flex-shrink: 0;
                             color: var(--accent);
                             margin-left: 12px;
                             height: 25px;
@@ -213,7 +240,7 @@ export const getStaticProps  =  async (context) => {
     let body = ""
 
     try {
-        body = await markdownToHtml(readFileSync(`${process.cwd()}/data/projects/${id}.md`, "utf8"))
+        body = readFileSync(`${process.cwd()}/data/projects/${id}.md`, "utf8")
     } catch (error) {
         console.log(error)
     }

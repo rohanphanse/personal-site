@@ -3,6 +3,7 @@ import { useRouter } from "next/router"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faSun, faMoon, faBars } from "@fortawesome/free-solid-svg-icons"
 import { useState, createRef } from "react"
+import ImageModal from "./ImageModal"
 
 const Navbar = (props) => {
     const [dropdown, updateDropdown] = useState(true);
@@ -21,17 +22,27 @@ const Navbar = (props) => {
     return (
         <>
             <nav className="navbar">
-                <Link href="/">
-                    <a className="nav-logo-container g-row">
+                {props.home ? (
+                    <div className="nav-logo-container g-row">
                         <div className="nav-logo g-center-row">
-                            <img src="/images/logo.png" className="nav-logo-image" />
+                            <ImageModal>
+                                <img src="/images/logo.png" className="nav-logo-image" />
+                            </ImageModal>
                             Rohan Phanse
                         </div>
-                    </a>
-                </Link>
+                    </div>
+                ) : (
+                    <Link href="/">
+                        <a className="nav-logo-container g-row">
+                            <div className="nav-logo g-center-row">
+                                <img src="/images/logo.png" className="nav-logo-image" />
+                                Rohan Phanse
+                            </div>
+                        </a>
+                    </Link>
+                )}
                 <div className="nav-links g-center-row">
                     <NavLink href="/">Home</NavLink>
-                    {/* <NavLink href="/about">About</NavLink> */}
                     <NavLink href="/projects">Projects</NavLink>
                     <NavLink href="/blog">Blog</NavLink>
                     <NavLink href="/contact">Contact</NavLink>
@@ -116,6 +127,7 @@ const Navbar = (props) => {
                     height: 30px;
                     width: 30px;
                     border-radius: 4px;
+                    cursor: pointer;
                 }
 
                 .menu-button {
@@ -153,7 +165,7 @@ const NavLink = (props) => {
                 }
 
                 .active {
-                    color: var(--text-light);
+                    color: white;
                     background-color: var(--accent);
                 }
 
@@ -170,7 +182,6 @@ const NavDropdown = (props) => {
         <>
             <div className = "nav-dropdown g-column show" ref = {props.dropdownRef}>
                 <NavDropdownLink href = "/">Home</NavDropdownLink>
-                <NavDropdownLink href = "/about">About</NavDropdownLink>
                 <NavDropdownLink href = "/projects">Projects</NavDropdownLink>
                 <NavDropdownLink href = "/blog">Blog</NavDropdownLink>
                 <NavDropdownLink href = "/contact">Contact</NavDropdownLink>
@@ -200,6 +211,7 @@ const NavDropdown = (props) => {
                     height: 30px;
                     width: 30px;
                     border-radius: 4px;
+                    cursor: pointer;
                 }
             `}</style>
         </>

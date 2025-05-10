@@ -5,18 +5,23 @@ import { readFileSync } from "fs"
 import Link from "next/link"
 import { useEffect } from "react"
 import Prism from "prismjs"
-import { remark } from "remark"
-import html from "remark-html"
-import remarkPrism from "remark-prism"
+import ReactMarkdown from "react-markdown"
+import rehypePrism from "rehype-prism-plus"
+import rehypeRaw from "rehype-raw"
 require("prismjs/components/prism-rust")
 require("prismjs/components/prism-haskell")
+import ImageModal from "../../components/ImageModal"
+import { visit } from "unist-util-visit"
 
-async function markdownToHtml(markdown) {
-    const result = await remark()
-        .use(html, { sanitize: false })
-        .use(remarkPrism)
-        .process(markdown)
-    return result.toString()
+function rehypeExternalLinks() {
+    return (tree) => {
+        visit(tree, "element", (node) => {
+            if (node.tagName === "a" && node.properties) {
+                node.properties.target = "_blank"
+                node.properties.rel = "noopener noreferrer"
+            }
+        })
+    }
 }
 
 const Article  =  ({ article, body }) => {
@@ -36,11 +41,15 @@ const Article  =  ({ article, body }) => {
                                 <div className = "date">
                                     {article.date.month + " " + article.date.year}
                                 </div>
-                                <img src = {article.thumbnail} alt = {article.title} className = "thumbnail" />
+                                <ImageModal>
+                                    <img src = {article.thumbnail} alt = {article.title} className = "thumbnail" />
+                                </ImageModal>
                                 <div className = "body-container">
                                     <div className = "body">
                                         <div className = "markdown">
-                                            <div dangerouslySetInnerHTML={{ __html: body }}></div>
+                                            <ReactMarkdown remarkPlugins = {[]} rehypePlugins = {[rehypePrism, rehypeRaw, rehypeExternalLinks]} components={{ 
+                                                img: ({ node, ...props }) => <ImageModal><img {...props} /></ImageModal>
+                                            }}>{body}</ReactMarkdown>
                                         </div>
                                     </div>
                                 </div>
@@ -63,7 +72,7 @@ const Article  =  ({ article, body }) => {
 
                             --width: 800px;
                             --height: 500px;
-                            --scale: ${0.75};
+                            --scale: 0.75;
                         }
 
                         .wrapper {
@@ -78,7 +87,6 @@ const Article  =  ({ article, body }) => {
                             transform: scale(var(--scale));
                             transform-origin: 0 0;
                             border: 1px solid var(--border);
-=
                         }
 
                         .live-demo {
@@ -162,6 +170,11 @@ const Article  =  ({ article, body }) => {
                             border-radius: 4px;
                             background-color: var(--border);
                             color: var(--text);
+                            transition-duration: 0.2s;
+                        }
+
+                        .back-to-articles:hover {
+                            transform: translateY(-1px);
                         }
 
                         .thumbnail {
@@ -183,7 +196,7 @@ export const getStaticProps  =  async (context) => {
     let body = ""
 
     try {
-        body = await markdownToHtml(readFileSync(`${process.cwd()}/data/blog/${id}.md`, "utf8"))
+        body = readFileSync(`${process.cwd()}/data/blog/${id}.md`, "utf8")
     } catch (error) {
         console.log(error)
     }
@@ -199,7 +212,6 @@ export const getStaticProps  =  async (context) => {
 export const getStaticPaths  =  async () => {
     const ids  = articles.map((article) => article.id)
     const paths = ids.map((id) => ({ params: { id } }))
-
     return {
         paths,
         fallback: false

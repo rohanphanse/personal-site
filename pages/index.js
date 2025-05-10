@@ -1,15 +1,18 @@
 import Layout from "../components/Layout"
+import ImageModal from "../components/ImageModal"
 
 const Home = () => {
     return (
-        <Layout>
+        <Layout home>
             <div className = "g-center-row">
                 <div className = "g-article">
                     <div className = "bio">
-                        <img src = "/images/rohan-with-handsome-dan.jpg" alt = "Rohan" className = "bio-image" />
+                        <ImageModal>
+                            <img src = "/images/rohan-with-handsome-dan.jpg" alt = "Rohan" className = "bio-image" />
+                        </ImageModal>
                         <div className = "g-column">
                             <h1>Hello, I&apos;m Rohan.</h1>
-                            <div className = "desc">I am a first-year student at Yale University. I really enjoy CS development and research, and I&apos;m excited to continue pursuing these disciplines in college. In my free time, I love singing / playing rock songs on my guitar and finding new people to play table tennis with :).</div>
+                            <div className = "desc">I am a student at Yale University in the Class of &apos;27. I really enjoy CS development and research, and I&apos;m excited to keep exploring these fields in college and beyond. In my free time, I love singing / playing rock songs on my guitar and finding new people to play table tennis with :).</div>
                         </div>
                     </div>
                 </div>

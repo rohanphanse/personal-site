@@ -1,12 +1,5 @@
 export const articles = [
     {
-        id: "haskell-adventures",
-        title: "My Haskell Adventures",
-        description: "haskell haskell haskell",
-        date: { month: "June", year: 2022 },
-        thumbnail: "/images/blog/haskell-logo.png",
-    },
-    {
         id: "paly-python-summer-camps",
         title: "Paly Python Summer Camps", 
         description: "Learn about how Paly Python hosted 2 successful CS camps!",

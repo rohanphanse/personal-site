@@ -8,6 +8,7 @@
     --text-light: white;
     --background: white;
     --link: #0070f3;
+    --background-light: #f9f9f9;
 } 
 
 .dark * {
@@ -18,6 +19,7 @@
     --text-light: black;
     --background: #212131;
     --link: #7bb8fe;
+    --background-light: #333342;
 }
 
 * {
@@ -52,10 +54,11 @@ h3 {
 }
 
 code {
-    padding: 0px 5px;
-    border-radius: 4px;
-    background-color: var(--border);
-    font-size: 1rem;
+    color: black;
+    background-color: #f5f2f0;
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+    font-family: monospace;
 }
 
 ul, ol {

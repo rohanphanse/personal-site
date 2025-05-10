@@ -1,0 +1,1 @@
+Link to paper: <a href = "https://trec.nist.gov/pubs/trec33/papers/yalenlp.tot.pdf" target = "_blank" rel = "noreferrer">https://trec.nist.gov/pubs/trec33/papers/yalenlp.tot.pdf</a>
