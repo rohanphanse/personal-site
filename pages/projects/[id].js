@@ -31,7 +31,8 @@ function rehypeExternalLinks() {
 const Project  =  ({ project, body }) => {
     useEffect(() => {
         Prism.highlightAll()
-      }, [])
+    }, [])
+    let scale = project.url.endsWith(".pdf") ? 1 : 0.75
     return (
         <>
             {project === "Error" ? (
@@ -44,16 +45,14 @@ const Project  =  ({ project, body }) => {
                                 <div className = "back-link">Back to <Link href = "/projects"><a>/projects</a></Link></div>
                                 <h1 className = "title g-center-row">
                                     {project.title}
-                                    {project.category === "programming" && (
-                                        <a
+                                    <a
                                             href = {project.url}
                                             target = "_blank"
                                             rel = "noreferrer"
                                             className = "open-link"
                                         >
                                             <FontAwesomeIcon icon = {faArrowUpRightFromSquare} />
-                                        </a>
-                                    )}
+                                    </a>
                                 </h1>
                                 <div className = "date">
                                     {project.date.month + " " + project.date.year}
@@ -109,7 +108,7 @@ const Project  =  ({ project, body }) => {
 
                             --width: 800px;
                             --height: 500px;
-                            --scale: ${0.75};
+                            --scale: ${scale};
                         }
 
                         .wrapper {
@@ -153,8 +152,9 @@ const Project  =  ({ project, body }) => {
                         }
 
                         .title {
-                        margin-top: 10px;
+                            margin-top: 10px;
                             margin-bottom: 2px;
+                            text-align: center;
                         }
 
                         .date {

@@ -2,7 +2,7 @@ export const projects = [
     {
         id: "par-d",
         title: "Predicting Human Intent to Interact with a Public Robot: The People Approaching Robots Database (PAR-D)",
-        description: "Wrote Python scripts for the development and analysis of models (MLP, Trajectory, Random Forest Classifier) used to predict a passerby's intent to interact with a robot.",
+        description: "Contributed to development and analysis of datasets and ML models used to predict a passerby's intent to interact with a robot and designed human baseline surveys.",
         date: { month: "November", year: 2024 },
         url: "/pdfs/par-d.pdf",
         languages: ["Python", "PyTorch"],
@@ -12,12 +12,22 @@ export const projects = [
     {
         id: "trec-tot",
         title: "Yale NLP at TREC 2024: Tip-of-the-Tongue Track",
-        description: "Generated synthetic queries for scarce domains with GPT-4o mini to train dense retrievers for the Tip-of-the-Tongue task.",
+        description: "Generated 100k+ synthetic queries for scarce domains to train dense retrievers for the Tip-of-Tongue task and developed new routing and reranking approaches.",
         date: { month: "February", year: 2025 },
         url: "/pdfs/yalenlp.tot.pdf",
         languages: ["Python", "PyTorch", "RAG"],
         category: "research",
         thumbnail: "/images/projects/nist-logo.png",
+    },
+    {
+        id: "msrs",
+        title: "MSRS: Evaluating Multi-Source Retrieval-Augmented Generation",
+        description: "Developed benchmarks for multi-source retrieval-augmented generation (RAG) built via a scalable framework and conducted extensive experiments and ablation studies.",
+        date: { month: "August", year: 2025 },
+        url: "/pdfs/msrs.pdf",
+        languages: ["Python", "PyTorch", "RAG"],
+        category: "research",
+        thumbnail: "/images/colm-logo.jpg",
     },
     {
         id: "vectory",
