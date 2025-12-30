@@ -40,6 +40,16 @@ export const projects = [
         thumbnail: "/images/projects/vectory-thumbnail.png"
     },
     {
+        id: "stock-market-visualizer",
+        title: "Stock Market Visualizer",
+        description: "",
+        date: { month: "June", year: 2020 },
+        url: "https://k88fv8-8000.csb.app/",
+        languages: ["Python"],
+        category: "programming",
+        thumbnail: "/images/projects/stock-thumbnail.png"
+    },
+    {
         id: "dripped",
         title: "Dripped (YHack)",
         description: "A Chrome extension estimating the environmental impact of any apparel item with one click!",
@@ -130,6 +140,26 @@ export const projects = [
         languages: ["C++", "OpenMP", "ParlayLib", "CUDA"],
         category: "class",
         thumbnail: "/images/projects/3-body.png"
+    },
+    {
+        id: "cpsc-5710-final",
+        title: "CPSC 5710 Final: Building Trustworthy Vision Transformers",
+        description: "",
+        date: { month: "December", year: 2025 },
+        url: "/pdfs/cpsc-5710.pdf",
+        languages: ["Python", "PyTorch"],
+        category: "class",
+        thumbnail: "/images/projects/dinov2.png"
+    },
+    {
+        id: "cpsc-5800-final",
+        title: "CPSC 5800 Final: Real-Time Hand Tracking for Gesture-Based Tennis Simulation",
+        description: "",
+        date: { month: "December", year: 2025 },
+        url: "/pdfs/cpsc-5800.pdf",
+        languages: ["Python", "PyTorch"],
+        category: "class",
+        thumbnail: "/images/projects/tennis-thumbnail.png"
     },
 ]
 
